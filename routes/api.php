@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+app()->router->get('zoap/{key}/server', [
+    'as' => 'zoap.server.wsdl',
+    'uses' => '\App\Http\Controllers\ZoapController@server'
+]);
+
+app()->router->post('zoap/{key}/server', [
+    'as' => 'zoap.server',
+    'uses' => '\App\Http\Controllers\ZoapController@server'
+]);
