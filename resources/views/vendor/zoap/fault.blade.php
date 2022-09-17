@@ -3,8 +3,8 @@
     <SOAP-ENV:Body>
         <SOAP-ENV:Fault>
             <success>false</success>
-            <faultcode>{!! $faultcode !!}</faultcode>
-            <faultstring>{!! $faultstring !!}</faultstring>
+            <cod_error>{!! $faultcode !!}</cod_error>
+            <message_error>{!! $faultstring !!}</message_error>
         </SOAP-ENV:Fault>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
