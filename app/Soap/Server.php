@@ -29,6 +29,8 @@ class Server extends LaminasSoapServer
     {
         $this->caughtException = is_string($fault) ? new Exception($fault) : $fault;
 
+        \Log::warning('soap', [$fault]);
+
         if ($fault instanceof ValidationException) {
             $message = $fault->getMessage();
             $code    = 422;
